@@ -28,7 +28,7 @@ public:
     //-----------------------------------
     void plotHistogram(Mat histogram)
     {
-        Mat histogram_image(400, 520, CV_8UC3, Scalar(0, 0, 0));
+        Mat histogram_image(400, 520, CV_8UC3);
         Mat normalized_histogram;
         normalize(histogram, normalized_histogram, 0, 400, NORM_MINMAX, -1, Mat());
 
@@ -49,9 +49,9 @@ int main()
     cv::Mat img;
     img = cv::imread("/Users/Hilton/Desktop/grayscale_cat_image.jpeg", 0);
 
-
     Histogram h1;
     cv::Mat hist = h1.calculateHistogram(img);
     h1.plotHistogram(hist);
+
     cv::waitKey(0);
 }
